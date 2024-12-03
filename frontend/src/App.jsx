@@ -1,7 +1,7 @@
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import NavigationBar from "./components/header/NavigationBar";
-import {   HashRoute,  Route, Routes,  }  from "react-HashRouter-dom";
+import {   HashRouter,  Route, Routes,  }  from "react-HashRouter-dom";
 import { useState, useEffect } from "react";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
