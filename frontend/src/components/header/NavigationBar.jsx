@@ -34,26 +34,26 @@ function NavigationBar() {
             navbarScroll
           >
             <Nav.Link href="/" className="text-white">Home</Nav.Link>
-            <Nav.Link href="#/listing" className="text-white">Cars</Nav.Link>
-            <Nav.Link href="#/about" className="text-white">About</Nav.Link>
-            <Nav.Link href="#/blog" className="text-white">Blog</Nav.Link>
-            <Nav.Link href="#/contact" className="text-white">Contact</Nav.Link>
+            <Nav.Link href="/listing" className="text-white">Cars</Nav.Link>
+            <Nav.Link href="/about" className="text-white">About</Nav.Link>
+            <Nav.Link href="/blog" className="text-white">Blog</Nav.Link>
+            <Nav.Link href="/contact" className="text-white">Contact</Nav.Link>
             
             
             <NavDropdown title="More" id="navbarScrollingDropdown"  className="text-white">
-              <NavDropdown.Item href="#/car">Add Car</NavDropdown.Item>
+              <NavDropdown.Item href="/car">Add Car</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 My Favorite
               </NavDropdown.Item>
               <NavDropdown.Divider />
           
-              <NavDropdown.Item href="#/register">Register</NavDropdown.Item>
+              <NavDropdown.Item href="/register">Register</NavDropdown.Item>
               {authToken ? (
                 <NavDropdown.Item href="#" onClick={logout}>
                   Logout
                 </NavDropdown.Item>
               ) : (
-                <NavDropdown.Item href="#/login">Login</NavDropdown.Item>
+                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
               )}
             </NavDropdown>
           </Nav>

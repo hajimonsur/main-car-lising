@@ -46,19 +46,19 @@ const App = () => {
 
       {/* react router setup */}
       <Router>
-       <Switch>
+       <Routes>
        <Route path="/" element={<Home/>}/>
-        <Route path="#/about" element={<About/>}/>
-        <Route path="#/listing" element={<AllCars/>}/>
-        <Route path="#/contact" element={<Contact/>}/>
-        <Route path="#/blog" element={<Blog/>}/>
-        <Route path="#/car" element={<Addcar />}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/listing" element={<AllCars/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/car" element={<Addcar />}/>
         <Route path="*" element={<PageNotFound/>}/>
-        <Route path="#/login" element={<SignIn />}/>
+        <Route path="/login" element={<SignIn />}/>
         {/* <Route path="/cardet" element={<Listing/>}/> */}
-        <Route path="#/register" element={<Register/>}/>
-        <Route path="#/cardetails/:id" element={<CarDetails/>}/>
-       </Switch>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/cardetails/:id" element={<CarDetails/>}/>
+       </Routes>
       </Router>
 
       {/* footer section */}
