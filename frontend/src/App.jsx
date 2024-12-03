@@ -46,7 +46,7 @@ const App = () => {
       {/* react Router setup */}
    
   
-      <HashRouter hashType="slash"><Routes>
+      <HashRouter hashType="slash">
        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/listing" element={<AllCars/>}/>
@@ -58,7 +58,7 @@ const App = () => {
         {/* <Route path="/cardet" element={<Listing/>}/> */}
         <Route path="/register" element={<Register/>}/>
         <Route path="/cardetails/:id" element={<CarDetails/>}/>
-       </Routes>
+ 
 
       </HashRouter>
     
