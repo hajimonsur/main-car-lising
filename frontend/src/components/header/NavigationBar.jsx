@@ -25,7 +25,7 @@ function NavigationBar() {
   return (
     <Navbar expand="lg" bg="danger" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" className="text-white">CarBay</Navbar.Brand>
+        <Navbar.Brand href="/" className="text-white">CarBay</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -34,7 +34,7 @@ function NavigationBar() {
             navbarScroll
           >
             <Nav.Link href="/" className="text-white">Home</Nav.Link>
-            <Nav.Link as={Link} to="/listing" className="text-white">Cars</Nav.Link>
+            <Nav.Link href="#/listing" className="text-white">Cars</Nav.Link>
             <Nav.Link href="/about" className="text-white">About</Nav.Link>
             <Nav.Link href="/blog" className="text-white">Blog</Nav.Link>
             <Nav.Link href="/contact" className="text-white">Contact</Nav.Link>
