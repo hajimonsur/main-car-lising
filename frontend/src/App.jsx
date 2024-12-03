@@ -1,7 +1,7 @@
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import NavigationBar from "./components/header/NavigationBar";
-import {   HashRouter as Router, Route, Routes,  }  from "react-router-dom";
+import {   HashHashRouter as HashRouter, Route, Routes,  }  from "react-HashRouter-dom";
 import { useState, useEffect } from "react";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
@@ -44,9 +44,9 @@ const App = () => {
     {/* header section*/}
       <NavigationBar />
 
-      {/* react router setup */}
+      {/* react Router setup */}
    
-      <Router>
+      <HashRouter>
       <Routes>
        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
@@ -60,7 +60,7 @@ const App = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/cardetails/:id" element={<CarDetails/>}/>
        </Routes>
-        </Router>
+        </HashRouter>
     
 
       {/* footer section */}
