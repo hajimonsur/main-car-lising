@@ -10,12 +10,14 @@ const AllCars = () => {
   const [error, setError] = useState(null); // Error state
 
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log("API URL",apiUrl);
 
   useEffect(() => {
     // Fetch data from the backend
     const fetchCars = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/cars");
+        const response = await fetch(`${apiUrl}/api/cars`);
         const data = await response.json();
         setCars(data); // Update the car state with the data
         console.log(data);

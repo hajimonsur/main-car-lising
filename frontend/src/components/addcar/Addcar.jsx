@@ -52,6 +52,7 @@ const Addcar = () => {
 
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -68,7 +69,7 @@ const Addcar = () => {
     // update the backend
    
       try {
-        const response = await fetch("http://localhost:5000/api/cars", {
+        const response = await fetch(`${apiUrl}/api/cars`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

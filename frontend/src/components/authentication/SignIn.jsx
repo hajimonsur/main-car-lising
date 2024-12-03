@@ -24,6 +24,7 @@ function SignIn() {
     password: "",
   });
   const [loading, setLoading] = useState(false);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
 
   // handle form input changes
@@ -45,7 +46,7 @@ function SignIn() {
     e.preventDefault();
     // send data to server
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch(`${apiUrl}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
