@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function NavigationBar() {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ function NavigationBar() {
   return (
     <Navbar expand="lg" bg="danger" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="/" className="text-white">CarBay</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" className="text-white">CarBay</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -34,7 +34,7 @@ function NavigationBar() {
             navbarScroll
           >
             <Nav.Link href="/" className="text-white">Home</Nav.Link>
-            <Nav.Link href="/listing" className="text-white">Cars</Nav.Link>
+            <Nav.Link as={Link} to="/listing" className="text-white">Cars</Nav.Link>
             <Nav.Link href="/about" className="text-white">About</Nav.Link>
             <Nav.Link href="/blog" className="text-white">Blog</Nav.Link>
             <Nav.Link href="/contact" className="text-white">Contact</Nav.Link>

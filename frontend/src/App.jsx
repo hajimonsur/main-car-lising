@@ -2,7 +2,7 @@ import "./App.css";
 import Footer from "./components/footer/Footer";
 import NavigationBar from "./components/header/NavigationBar";
 import {   Route, Routes,  }  from "react-router-dom";
-import { useState, useEffect } from "react";
+import { HashRouter } from 'react-router-dom'; 
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Listing from "./components/listing/Listing";
@@ -11,7 +11,6 @@ import Blog from "./components/blog/Blog";
 import Addcar from "./components/addcar/Addcar";
 import AllCars from "./components/AllCars";
 import PageNotFound from "./components/notfound/PageNotFound";
-import Login from "./components/status/Login";
 import Profile from "./components/status/Profile";
 import Register from "./components/authentication/Register";
 import SignIn from "./components/authentication/SignIn";
@@ -47,7 +46,7 @@ const App = () => {
       {/* react Router setup */}
    
   
-      <Routes>
+      <HashRouter hashType="slash"><Routes>
        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/listing" element={<AllCars/>}/>
@@ -60,7 +59,8 @@ const App = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/cardetails/:id" element={<CarDetails/>}/>
        </Routes>
-        
+
+      </HashRouter>
     
 
       {/* footer section */}
