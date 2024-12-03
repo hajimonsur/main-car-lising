@@ -34,7 +34,7 @@ function NavigationBar() {
             navbarScroll
           >
             <Nav.Link href="/" className="text-white">Home</Nav.Link>
-            <Nav.Link href="?#/listing" className="text-white">Cars</Nav.Link>
+            <Nav.Link href="/listing" className="text-white">Cars</Nav.Link>
             <Nav.Link href="/about" className="text-white">About</Nav.Link>
             <Nav.Link href="/blog" className="text-white">Blog</Nav.Link>
             <Nav.Link href="/contact" className="text-white">Contact</Nav.Link>

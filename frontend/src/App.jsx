@@ -1,7 +1,7 @@
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import NavigationBar from "./components/header/NavigationBar";
-import {   HashRouter,  Route, Routes,  }  from "react-HashRouter-dom";
+import {   Route, Routes,  }  from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
@@ -46,11 +46,11 @@ const App = () => {
 
       {/* react Router setup */}
    
-      <HashRouter>
+  
       <Routes>
        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/#/listing" element={<AllCars/>}/>
+        <Route path="/listing" element={<AllCars/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/car" element={<Addcar />}/>
@@ -60,7 +60,7 @@ const App = () => {
         <Route path="/register" element={<Register/>}/>
         <Route path="/cardetails/:id" element={<CarDetails/>}/>
        </Routes>
-        </HashRouter>
+        
     
 
       {/* footer section */}
