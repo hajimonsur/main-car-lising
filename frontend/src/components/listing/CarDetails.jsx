@@ -69,10 +69,12 @@ const CarDetails = () => {
     const { id } = useParams();
     const [car, setCar] = useState({});
     const [loading, setLoading] = useState(true);
+    const apiUrl = import.meta.env.VITE_API_URL;
+
 
     const fetchCar = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/cars/${id}`);
+        const response = await fetch(`${apiUrl}/api/cars/${id}`);
         const data = await response.json();
         setCar(data);
         setLoading(false);
@@ -89,7 +91,7 @@ const CarDetails = () => {
   return (
     <div className='container my-5'>
       {loading && <Spinner animation="border" />}
-        <h1 className='text-center text-danger'>Welcome to Car Details {id}</h1>
+        {/* <h1 className='text-center text-danger'>Welcome to Car Details {id}</h1> */}
         <h2>{car.make}</h2>
         <div style={styles.container}>
         <div style={styles.imageContainer}>
@@ -109,7 +111,7 @@ const CarDetails = () => {
           </p>
           <p style={styles.description}>{car?.description || ""}</p>
           <p style={styles.info}>
-            {/* <strong>Posted By:</strong> {car?.postedBy || ""} */}
+            <strong>Posted By:</strong> {car?.postedBy || ""}
           </p>
           <p style={styles.price}>${car?.price || ""}</p>
           <button style={styles.button}>Contact Seller</button>

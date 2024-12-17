@@ -8,6 +8,18 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate, Link } from "react-router-dom";
 
 function NavigationBar() {
+
+  const styles = {
+    profile: {
+      marginLeft: "30px",
+      width: "40px",
+      height: "40px",
+      borderRadius: "50%",
+      border: "1px solid black",
+      backgroundColor: "white"
+    },
+  };
+
   const navigate = useNavigate();
   const authToken = localStorage.getItem("authToken");
   const user = JSON.parse(localStorage.getItem("user"));
@@ -20,11 +32,22 @@ function NavigationBar() {
     localStorage.removeItem("user");
     // redirect to login page
     navigate("/login");
-    
   }
+
+   // handle profile click
+    
+   const handleProfileClick = (username) => {
+    if (authToken) {
+      // redirect to profile page
+      navigate(`/profile/${username}`); 
+    } else {
+      // redirect to login page
+      navigate("/login");
+    }
+};
   return (
     <Navbar expand="lg" bg="danger" data-bs-theme="dark">
-      <Container fluid>
+      <Container fluid className="container">
         <Navbar.Brand href="/" className="text-white">CarBay</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -68,6 +91,8 @@ function NavigationBar() {
             <Button variant="dark">Search</Button>
           </Form>
           <p className="mx-3 text-warning">Hello {user?.username || " " }</p>
+          {authToken ? (  <div style={styles.profile} onClick={() => handleProfileClick(user.username)}></div>) : ( <div></div>  )}
+          {/* onClick={() => openCarDetails(car._id)} */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

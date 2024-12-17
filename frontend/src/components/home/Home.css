@@ -1,0 +1,15 @@
+/* Ensure the carousel container has a fixed size */
+.carousel-container {
+    width: 600px; /* Adjust width */
+    height: 400px; /* Adjust height */
+    margin: auto;
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  /* Style the carousel images */
+  .carouselImg {
+    width: 100%; /* Take the full width of the container */
+    height: 10% !important; /* Take the full height of the container */important; /* Take the full height of the container */
+    object-fit: cover; /* Crop and fill while maintaining aspect ratio */
+  }
+  

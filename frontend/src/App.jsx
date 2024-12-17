@@ -21,12 +21,13 @@ const App = () => {
   return (
   
     <>
+
     {/* header section*/}
+
       <NavigationBar />
 
       {/* react Router setup */}
-   
-  
+
       <Routes>
        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
@@ -38,11 +39,14 @@ const App = () => {
         <Route path="/login" element={<SignIn />}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/cardetails/:id" element={<CarDetails/>}/>
+        <Route path="/profile/:username" element={<Profile/>}/>
       </Routes>
     
 
       {/* footer section */}
+
       <Footer/>
+      
     </>
   );
 };
