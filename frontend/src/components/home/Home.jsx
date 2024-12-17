@@ -11,7 +11,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 carouselImg"
-            src="public/luxrycars.jpg"
+            src="/luxrycars.jpg"
             alt="First Slide"
             
           />
