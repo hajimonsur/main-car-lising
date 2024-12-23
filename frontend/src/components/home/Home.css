@@ -1,15 +1,52 @@
-/* Ensure the carousel container has a fixed size */
-.carousel-container {
-    width: 600px; /* Adjust width */
-    height: 400px; /* Adjust height */
-    margin: auto;
-    overflow: hidden; /* Prevent overflow */
-  }
-  
-  /* Style the carousel images */
+/* .carouselImg {
+  width: 100%; /* Ensures the image takes the full width of its container */
+  /* height: 600px; /* Fixed height for uniformity */
+  /* object-fit: cover; Crops the image to maintain aspect ratio */ */
+/* } */ */
+
+.carousel-overlay {
+  position: relative;
+}
+
+.carouselImg {
+  height: 500px;
+  object-fit: cover;
+}
+
+.caption-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  color: #fff;
+  text-align: left;
+}
+
+.carousel-caption h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
   .carouselImg {
-    width: 100%; /* Take the full width of the container */
-    height: 10% !important; /* Take the full height of the container */important; /* Take the full height of the container */
-    object-fit: cover; /* Crop and fill while maintaining aspect ratio */
+    height: 300px;
   }
+
+  .carousel-caption h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+
   

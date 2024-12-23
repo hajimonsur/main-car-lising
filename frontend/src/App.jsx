@@ -13,6 +13,8 @@ import Profile from "./components/status/Profile";
 import Register from "./components/authentication/Register";
 import SignIn from "./components/authentication/SignIn";
 import CarDetails from "./components/listing/CarDetails";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const App = () => {

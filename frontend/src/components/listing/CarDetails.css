@@ -1,0 +1,16 @@
+.img-fluid {
+    border: 3px solid #f4f4f4;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .btn-lg {
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-lg:hover {
+    background-color: #0056b3;
+  }
+  
