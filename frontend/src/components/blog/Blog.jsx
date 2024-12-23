@@ -6,7 +6,7 @@ const Blog = () => {
     {
       id: 1,
       title: "Top 10 Cars to Watch Out for in 2024",
-      image: "/public/Mercedes-Benz.jpg",
+      image: "/Mercedes-Benz.jpg",
       description:
         "Explore the most anticipated cars of 2024, featuring innovative designs, cutting-edge technology, and impressive performance.",
       date: "December 20, 2024",
@@ -15,7 +15,7 @@ const Blog = () => {
     {
       id: 2,
       title: "Electric Cars: Revolutionizing the Auto Industry",
-      image: "/public/Electric_Car.jpg",
+      image: "/Electric_Car.jpg",
       description:
         "How electric vehicles are transforming the automobile industry and what this means for the future of transportation.",
       date: "December 18, 2024",
@@ -24,7 +24,7 @@ const Blog = () => {
     {
       id: 3,
       title: "5 Tips for First-Time Car Buyers",
-      image: "/public/Porsche.jpg",
+      image: "/Porsche.jpg",
       description:
         "A comprehensive guide for first-time car buyers to make informed decisions and avoid common pitfalls.",
       date: "December 15, 2024",

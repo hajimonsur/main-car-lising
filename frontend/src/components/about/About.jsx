@@ -20,7 +20,7 @@ const About = () => {
           <div className="row align-items-center g-4">
             <div className="col-md-6">
               <img
-                src="public/aboutcar.png"
+                src="/aboutcar.png"
                 alt="About Us"
                 className="img-fluid rounded shadow"
               />
