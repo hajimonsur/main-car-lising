@@ -20,7 +20,7 @@ const About = () => {
           <div className="row align-items-center g-4">
             <div className="col-md-6">
               <img
-                src="about-us-banner.jpg"
+                src="public/aboutcar.png"
                 alt="About Us"
                 className="img-fluid rounded shadow"
               />
@@ -42,7 +42,7 @@ const About = () => {
       {/* Why Choose Us */}
       <section className="why-us-section py-5 bg-light">
         <div className="container">
-          <h2 className="text-center text-primary fw-bold mb-5">Why Choose Us?</h2>
+          <h2 className="text-center text-danger fw-bold mb-5">Why Choose Us?</h2>
           <div className="row g-4">
             <div className="col-md-4 text-center">
               <div className="feature-card p-4 rounded shadow-sm bg-white">
@@ -78,23 +78,23 @@ const About = () => {
       {/* Meet the Team */}
       <section className="team-section py-5">
         <div className="container">
-          <h2 className="text-center text-primary fw-bold mb-5">Meet Our Team</h2>
+          <h2 className="text-center text-danger fw-bold mb-5">Meet Our Team</h2>
           <div className="row g-4 justify-content-center">
             <div className="col-md-3 text-center">
               <div className="team-member">
                 <img
-                  src="team-member-1.jpg"
+                  src="monsur.jpg"
                   alt="Team Member 1"
                   className="img-fluid rounded-circle mb-3 shadow-sm"
                 />
-                <h5>John Doe</h5>
+                <h5>Taiwo Monsuru</h5>
                 <p className="text-muted">Founder & CEO</p>
               </div>
             </div>
             <div className="col-md-3 text-center">
               <div className="team-member">
                 <img
-                  src="team-member-2.jpg"
+                  src="sara.jpg"
                   alt="Team Member 2"
                   className="img-fluid rounded-circle mb-3 shadow-sm"
                 />
@@ -105,7 +105,7 @@ const About = () => {
             <div className="col-md-3 text-center">
               <div className="team-member">
                 <img
-                  src="team-member-3.jpg"
+                  src="man.jpg"
                   alt="Team Member 3"
                   className="img-fluid rounded-circle mb-3 shadow-sm"
                 />
