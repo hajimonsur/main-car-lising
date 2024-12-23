@@ -1,0 +1,45 @@
+.hero-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url("hero-background.jpg") center/cover no-repeat;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+  }
+  
+  .feature-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #e74c3c;
+  }
+  
+  .team-member h5 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+  
+    .feature-card {
+      text-align: center;
+    }
+  }
+  

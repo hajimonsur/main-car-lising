@@ -4,47 +4,34 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import { Link } from "react-router-dom";
+import "./SignIn.css"; // New CSS file for custom styles
 
 function SignIn() {
-  const styles = {
-    show: {
-      position: "relative",
-      justifyContent: "space-between",
-      color: "red",
-      cursor: "pointer",
-      left: "90%",
-      bottom: "55px",
-    },
-  };
-  const navigate = useNavigate();
-
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
 
+  // Toggle Password Visibility
+  const togglePassword = () => setShowPassword(!showPassword);
 
-  // handle form input changes
+  // Handle Form Input Changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
-  console.log(formData);
 
-  const togglePassword = () => {
-    setShowPassword(!showPassword);
-  };
+  // Handle Clear Fields
+  const handleClear = () => setFormData({ email: "", password: "" });
 
-  // handle clear input of fields
-  const handleClear = () => {
-    setFormData({ email: "", password: "" });
-  };
+  // Handle Submit
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    // send data to server
     try {
       const response = await fetch(`${apiUrl}/api/auth/login`, {
         method: "POST",
@@ -56,80 +43,86 @@ function SignIn() {
 
       if (response.ok) {
         const data = await response.json();
-        setLoading(false);
-        console.log(data);
-        // Extract token
         const { authToken, user } = data;
-        // Save token to local storage
+
         localStorage.setItem("authToken", authToken);
         localStorage.setItem("user", JSON.stringify(user));
-        alert("Login successful");
-
+        alert("Login successful!");
         handleClear();
-        // redirect to login page on successful signup
-          navigate("/listing");
+        navigate("/");
       } else {
-        setLoading(false);
-        alert("Login failed");
+        alert("Login failed. Please check your credentials.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Error logging in:", error);
+    } finally {
       setLoading(false);
     }
   };
+
   return (
-    <div className="container my-5">
-      <h1 className="mb-5 text-danger">Sign In</h1>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            value={formData.email}
-            onChange={(e) => handleChange(e)}
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type={showPassword ? "text" : "password" }
-            placeholder="Password"
-            value={formData.password}
-            onChange={(e) => handleChange(e)}
-          />
-        </Form.Group>
-        <div style={styles.show}>
-          {showPassword ? (
-            <p onClick={togglePassword}>Hide</p>
-          ) : (
-            <p onClick={togglePassword}>Show</p>
-          )}
-        </div>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        {loading ? (
-          <Spinner animation="border" variant="danger" />
-        ) : (
-          <Button variant="danger" type="submit">
-          Sign In
-        </Button>
-
-        ) }
-       
-      
-        <p  className="text-muted mt-4">
-          Do not have an account ? <Link to="/register" className="text-danger" id="signup">Sign Up!</Link>
+    <div className="signin-container d-flex justify-content-center align-items-center">
+      <div className="signin-card shadow">
+        <h2 className="text-center text-danger fw-bold mb-4">Welcome Back!</h2>
+        <p className="text-center text-muted mb-4">
+          Sign in to explore amazing features on CarBay.
         </p>
-      </Form>
+        <Form onSubmit={handleSubmit}>
+          {/* Email Field */}
+          <Form.Group controlId="email" className="mb-3">
+            <Form.Label>Email Address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+
+          {/* Password Field */}
+          <Form.Group controlId="password" className="mb-3">
+            <Form.Label>Password</Form.Label>
+            <div className="password-field">
+              <Form.Control
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter your password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <span className="toggle-password" onClick={togglePassword}>
+                {showPassword ? "Hide" : "Show"}
+              </span>
+            </div>
+          </Form.Group>
+
+          {/* Submit Button */}
+          <div className="d-grid mb-3">
+            {loading ? (
+              <Button variant="danger" disabled>
+                <Spinner as="span" animation="border" size="sm" role="status" />
+                Signing In...
+              </Button>
+            ) : (
+              <Button type="submit" variant="danger">
+                Sign In
+              </Button>
+            )}
+          </div>
+
+          <div className="text-center mt-3">
+            <p className="text-muted">
+              Don't have an account?{" "}
+              <Link to="/register" className="text-danger fw-bold">
+                Sign Up!
+              </Link>
+            </p>
+          </div>
+        </Form>
+      </div>
     </div>
   );
 }
-
 
 export default SignIn;

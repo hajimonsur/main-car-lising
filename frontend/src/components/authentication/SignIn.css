@@ -1,0 +1,42 @@
+/* General Container Styling */
+.signin-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f8d7da, #fff3cd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Card Styling */
+  .signin-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Password Field Styling */
+  .password-field {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 14px;
+    color: #dc3545;
+  }
+  
+  /* Button Styling */
+  button {
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
